@@ -24,42 +24,39 @@
     }
 
   /* 3. BÜTÜN MOBİL EKRANLAR ÜÇÜN ORTAQ ADAPTASİYA (768px və aşağı) */
-  @media (max-width: 768px) {
-      /* Sabit eni olan header, footer və əsas qutuları avtomatik 100% edir */
-      header, footer, section, .container, div[style*="width"] {
-          width: 100% !important;
-          max-width: 100% !important;
-          box-sizing: border-box !important;
-          margin-left: 0 !important;
-          margin-right: 0 !important;
-      }
-
-      /* Kompüter dizaynı üçün verilən sürüşdürmə (transform) xətalarını avtomatik sıfırlayır */
-      [style*="transform"] {
-          transform: none !important;
-      }
-
-    /* Düymə qutularını və düymələri mobil ekrana uyğunlaşdırır */
-    .düymələr, div.düymələr, .flex-qutu {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        width: 100% !important;
+  /* Mobil ekranlar üçün tam mərkəzləşdirilmiş ortaq kod */
+@media (max-width: 768px) {
+    /* Səhifənin ümumi gövdəsinə kənar boşluq veririk ki, yazılar ekranın divarına yapışmasın */
+    body {
         padding: 0 10px !important;
+        box-sizing: border-box;
     }
 
-    .düymələr a, button, .btn {
-        width: 90% !important;
-        max-width: 320px !important;
-        margin: 8px auto !important;
+    /* Bütün əsas qutuları, header-i və mətn bloklarını tam mərkəzə gətiririk */
+    header, footer, .container, div.div-ul, div.mətn-qutusu {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        transform: none !important;
+        box-sizing: border-box !important;
+        float: none !important;
     }
 
-    /* Başlıq və mətnlərin telefonda ekrandan daşmasını önləyir */
-    h1, h2, h3, h4 {
-        font-size: 24px !important;
-        padding: 0 15px !important;
+    /* Başlıqları və mətnləri tam ortalayırıq */
+    h1, h2, h3, p {
         text-align: center !important;
-        word-break: break-word;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* Siyahı və mətn elementlərinin soldan və sağdan bərabər məsafədə durmasını təmin edirik */
+    li {
+        text-align: left !important; /* Mətnin özü oxunaqlı olsun deyə solsuz, amma blok mərkəzdə */
+        margin: 0 auto 20px auto !important;
+        max-width: 90%;
     }
 }
     html, body {
